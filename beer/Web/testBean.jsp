@@ -8,11 +8,11 @@
 </head>
 <body>
 
-Welcome to our page!
+Welcome to our page Welcome!
 
 <% if (request.getParameter("nome") == null || request.getParameter("nome") == "") { %>
 
-    <!-- Qualquer coisa escrita no response antes da <jsp:forward> e limpa, a frase Welcome to our page! NÃO e exibida  -->
+    <!-- Qualquer coisa escrita no response antes da <jsp:forward> e limpa, a frase Welcome to our page! NÃƒO e exibida  -->
     <jsp:forward page="handle.jsp"></jsp:forward>
     
 <% } %>
