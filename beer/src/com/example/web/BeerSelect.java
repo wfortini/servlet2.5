@@ -2,7 +2,9 @@ package com.example.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,6 +25,11 @@ public class BeerSelect extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		Map<String, String> mapa = new HashMap<String, String>();
+		
+		mapa.put("fido", "Cachorro fido");
+		mapa.put("bob", "Cachorro Bob");
 		
 		
 		resp.setContentType("text/html");

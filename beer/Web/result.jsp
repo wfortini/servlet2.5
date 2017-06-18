@@ -3,13 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page import="java.util.*, com.example.model.Counter" %>
 <%@ page isELIgnored ="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ taglib prefix="myTagFile"  tagdir="/WEB-INF/tags" %>
 
 <%@ taglib prefix="my" uri="regraTag" %>
  
 <html>
 <jsp:include page="head.jsp">
-
-      <jsp:param value="Teste JSP Param" name="subTitulo"/>
+      <jsp:param value="Teste JSP Param" name="subTitulo" />
 </jsp:include>
 <h1>Beer Recommendation JSP</h1>
 <body>
@@ -114,6 +116,16 @@ Mail init param:
 <%= application.getAttribute("mail") %>
 <br>
 <%= pageContext.getAttribute("mail", PageContext.APPLICATION_SCOPE) %>
+
+<jsp:useBean id="mapa" class="java.util.HashMap" type="java.util.Map"  scope="request" />
+
+<c:set target="${mapa}" property="fido" value="Cachorro fido" />
+
+<br><c:out value="${requestScope.mapa.fido}" />
+
+<br>
+
+<myTagFile:tagFile subTituloTagFile="Titulo: TabFile em ação!" />
 
  
 
