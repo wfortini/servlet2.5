@@ -7,6 +7,8 @@
 
 <%@ taglib prefix="myTagFile"  tagdir="/WEB-INF/tags" %>
 
+<%@ taglib prefix="myTagFileBody"  tagdir="/WEB-INF/tags" %>
+
 <%@ taglib prefix="my" uri="regraTag" %>
  
 <html>
@@ -126,6 +128,13 @@ Mail init param:
 <br>
 
 <myTagFile:tagFile subTituloTagFile="Titulo: TabFile em ação!" />
+<br>
+<myTagFileBody:tagFileBody fontColor="#660099">
+   Quando um valor de atributo é realmente grande Imagine que você tem um atributo de tag que pode ser tão longo como, 
+   digamos, um parágrafo. Ficar que na etiqueta de abertura poderia ficar feio. 
+   Então, você pode escolher colocar conteúdo no corpo da etiqueta e, em seguida, usar isso como um tipo de atributo
+</myTagFileBody:tagFileBody>
+
 
  
 
