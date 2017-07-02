@@ -2,6 +2,7 @@ package com.example.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,12 @@ public class BeerSelect extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		List optionsList = new ArrayList();
+		optionsList.add("Cerveja 1");
+		optionsList.add("Cerveja 2");
+		optionsList.add("Cerveja 3");
+		optionsList.add("Cerveja 4");
 		
 		Map<String, String> mapa = new HashMap<String, String>();
 		
@@ -56,6 +63,8 @@ public class BeerSelect extends HttpServlet{
 		Cargo cargo = new Cargo();
 		cargo.setDescricao("Arquiteto");
 		empregado.setCargo(cargo);
+		
+		req.setAttribute("optionList", optionsList);
 		
 		req.setAttribute("empregado", empregado);
 		//EL ---------------------------------

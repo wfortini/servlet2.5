@@ -4,12 +4,15 @@
 <%@ page import="java.util.*, com.example.model.Counter" %>
 <%@ page isELIgnored ="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="mytag" uri="simpleTags" %>
 
 <%@ taglib prefix="myTagFile"  tagdir="/WEB-INF/tags" %>
 
 <%@ taglib prefix="myTagFileBody"  tagdir="/WEB-INF/tags" %>
 
 <%@ taglib prefix="my" uri="regraTag" %>
+
+<%@ taglib prefix="selectTag" uri="http://example.com/tags/forms" %>
  
 <html>
 <jsp:include page="head.jsp">
@@ -17,6 +20,18 @@
 </jsp:include>
 <h1>Beer Recommendation JSP</h1>
 <body>
+
+<c:set scope="request" var="listaP" value='<%=request.getAttribute("optionList") %>'/>
+<br>
+<mytag:simple1/>
+<br>
+my select tag: 
+<selectTag:select name="color" size="1" optionsList='${requestScope.listaP}'/>
+<br>
+
+<mytag:simple1/>
+<br>
+
 <form action="testBean.jsp">
 
   User name: <input type="text" name="nome"><br>

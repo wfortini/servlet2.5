@@ -10,7 +10,7 @@ public class SimpleTagTest extends SimpleTagSupport{
 	
 	@Override
 	public void doTag() throws JspException, IOException {
-		
+		getJspContext().getOut().print("Este é um teste da Custom tag");
 		super.doTag();
 	}
 
